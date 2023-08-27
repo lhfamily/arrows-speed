@@ -1,0 +1,180 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+	font-family: "Press Start 2P";
+}
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000;
+	background-size: cover;
+	overflow: hidden;
+}
+
+#background {
+	z-index: -1;
+}
+
+.pixel {
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	border-radius: 0;
+	opacity: 0;
+	animation: pulse 2s infinite;
+	transition-duration: 1s;
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		background-color: #103053;
+		transform: scale(1);
+		opacity: 1;
+	}
+	50% {
+		background-color: #000000;
+		transform: scale(50);
+		opacity: 0.25;
+		left: 50%;
+		top: 50%;
+	}
+}
+
+#score {
+	position: fixed;
+	top: 12px;
+	left: 12px;
+	color: #fff;
+}
+
+#timer {
+	position: fixed;
+	top: 12px;
+	right: 12px;
+	color: #fff;
+}
+
+#game-board {
+	transition-duration: 1s;
+	width: 100%;
+	text-align: center;
+	font-size: 150%;
+	max-width: 50%;
+	margin: 0 auto;
+	color: #fff;
+	text-shadow: #00adef 0 0 72px;
+	align-items: stretch;
+}
+#game-board big {
+	display: block;
+	font-size: 230%;
+	color: #fff;
+	text-shadow: #00adef 0 0 72px;
+	margin: auto;
+}
+#game-board big.title {
+	display: block;
+	text-shadow: #000 0 0 23px;
+	margin: 3px 25px 0 23px;
+}
+#game-board small {
+	margin: 20px 0;
+	font-size: 15px;
+	line-height: 18px;
+	display: block;
+	color: #00adef;
+}
+
+#play-button {
+	transition-duration: 1s;
+	position: fixed;
+	font-size: 200%;
+	background: none;
+	color: #fff;
+	padding: 25px 42px;
+	bottom: 10vh;
+	opacity: 1;
+	border-width: 10px;
+	background-color: #10305355;
+	backdrop-filter: blur(8px);
+}
+#play-button.hidden {
+	opacity: 0;
+	filter: grayscale(100%) blur(50px);
+}
+
+/* Styles CSS pour les cases du jeu */
+.game-case {
+	width: 217px;
+	height: 217px;
+	display: inline-block;
+	position: relative;
+	transition-duration: 1s;
+	animation: fade-in;
+}
+.game-case.minified {
+	position: absolute;
+	margin-left: -217px;
+	opacity: 0;
+	z-index: -22;
+}
+
+#moldyPeachesWereGood {
+	position: fixed;
+	z-index: 22;
+	top: 50%;
+	left: 50%;
+	margin: 120px 0 0 -179px;
+	drop-shadow: #00adef 0 0 72px;
+}
+
+/* Style pour la barre de chargement */
+.progress-bar {
+	z-index: 23;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 360px;
+	height: 30px;
+	background-color: transparent;
+	overflow: hidden;
+}
+
+/* Animation pour la transition de noir et blanc à couleur */
+@keyframes fade-in {
+	0% {
+		filter: grayscale(100%) blur(50px);
+		opacity: 0;
+		transition-property: ease-in-out;
+		margin-left: -217px;
+	}
+	100% {
+		filter: grayscale(0%);
+		opacity: 1;
+		margin: 0;
+	}
+}
+
+.cubes-container {
+	display: flex;
+	height: 100%;
+}
+
+.progress-cube {
+	width: 30px;
+	height: 100%;
+	margin: 0 3px;
+	background-color: #103053;
+	transition: background-color 0.2s;
+	opacity: 0.5;
+}
+
+.progress-cube.visible {
+	background-color: #fff;
+	opacity: 1;
+}
