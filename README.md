@@ -11,5 +11,5 @@ besides (for now) the 4 arrows borrowed from fabulous [Friday Night Funkin](http
 
 ---
 
-Originally created on [CodePen.io](https://codepen.io/l3dlp/pen/PoXPLeJ).
+You can play with it on [CodePen.io](https://codepen.io/l3dlp/pen/PoXPLeJ).
 
