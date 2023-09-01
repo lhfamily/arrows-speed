@@ -1,7 +1,5 @@
-# CodePen Export with Build Process
-_Transform raw code into a browser-ready preview... offline_
-
-This package contains all of the original code ([src/](./src/)), and a custom build script with processors. You'll be able to edit and build for a local CodePen-like experience.
+This package contains all of the original code ([src/](./src/)), and a custom build script with processors. 
+---
 
 ## Installation
 
